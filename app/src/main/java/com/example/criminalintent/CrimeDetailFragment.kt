@@ -51,7 +51,7 @@ class CrimeDetailFragment : Fragment() {
                 crime = crime.copy(title = text.toString())
             }
 
-//            crimeDate.setText(crime.title)
+//            crimeTitle.setText(crime.title)
 //            crimeDate.setOnClickListener {
 //                crimeDate.setText(crime.title)
 //            }
