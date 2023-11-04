@@ -21,7 +21,9 @@ class CrimeListViewModel : ViewModel() {
         get() = _crimes.asStateFlow()
     init {
         viewModelScope.launch {
-
+            crimeRepository.getCrimes().collect{
+                _crimes.value = it
+            }
         }
     }
 
