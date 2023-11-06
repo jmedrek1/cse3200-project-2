@@ -39,11 +39,6 @@ class CrimeListFragment : Fragment() {
     ): View? {
         _binding = FragmentCrimeListBinding.inflate(layoutInflater, container, false)
         binding.crimeRecyclerView.layoutManager = LinearLayoutManager(context)
-
-        val crimes = crimeListViewModel.crimes
-//        val adapter = CrimeListAdapter(crimes)
-//        binding.crimeRecyclerView.adapter = adapter
-
         return binding.root
     }
 
@@ -54,8 +49,8 @@ class CrimeListFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
 //                val crimes = crimeListViewModel.loadCrimes()
                 crimeListViewModel.crimes.collect{crimes ->
-                    binding.crimeRecyclerView.adapter = CrimeListAdapter(crimes) {
-                        findNavController().navigate(R.id.show_crime_detail)
+                    binding.crimeRecyclerView.adapter = CrimeListAdapter(crimes) {crimeId ->
+                        findNavController().navigate(CrimeListFragmentDirections.showCrimeDetail(crimeId))
                     }
                 }
             }
