@@ -27,7 +27,7 @@ class DatePickerFragment: DialogFragment() {
         val initialMonth = calendar.get(Calendar.MONTH)
         val initialDay = calendar.get(Calendar.DAY_OF_MONTH)
 
-        return DatePickerDialog(requireContext(), null, initialYear, initialMonth, initialDay)
+        return DatePickerDialog(requireContext(), dateListener, initialYear, initialMonth, initialDay)
     }
 
     companion object {
