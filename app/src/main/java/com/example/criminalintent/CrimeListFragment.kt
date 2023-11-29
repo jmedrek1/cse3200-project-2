@@ -85,7 +85,6 @@ class CrimeListFragment : Fragment() {
                 showNewCrime()
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }
