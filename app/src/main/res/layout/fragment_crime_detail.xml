@@ -50,4 +50,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Send Crime Report"/>
+
+    <Button
+        android:id="@+id/crime_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Crime"/>
 </LinearLayout>

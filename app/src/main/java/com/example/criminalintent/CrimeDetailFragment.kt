@@ -80,6 +80,11 @@ class CrimeDetailFragment : Fragment() {
                     oldCrime.copy(isSolved = isChecked)
                 }
             }
+
+            crimeDelete.setOnClickListener {
+                crimeDetailViewModel.deleteCrime()
+                findNavController().navigateUp()
+            }
         }
 
         //added 2
